@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRATZ — Comunidade Gamer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#05060a;--panel:#0d1018;--text:#f7f8fc;--muted:#9198aa;--line:rgba(255,255,255,.09);--pink:#ff3da8;--violet:#875bff;--cyan:#29e8ff;--green:#58e5a5}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,sans-serif;color:var(--text);background:radial-gradient(circle at 50% -15%,rgba(135,91,255,.25),transparent 34%),radial-gradient(circle at 0 35%,rgba(255,61,168,.09),transparent 28%),var(--bg);min-height:100vh;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+.container{width:min(1080px,92%);margin:auto}a{text-decoration:none;color:inherit}
+header{height:76px;border-bottom:1px solid var(--line);background:rgba(5,6,10,.75);backdrop-filter:blur(20px);position:sticky;top:0;z-index:30}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;font:700 25px "Space Grotesk"}.logo-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--violet));box-shadow:0 0 35px rgba(255,61,168,.3)}
+nav{display:flex;gap:28px;color:#aeb4c5;font-size:13px}nav a:hover{color:white}.nav-button{padding:10px 15px;border:1px solid rgba(37,232,255,.22);border-radius:10px;color:#67eaff;font-size:11px;font-weight:800;background:rgba(37,232,255,.04)}
+.hero{min-height:calc(100vh - 76px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:85px 0 75px}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,61,168,.28);background:rgba(255,61,168,.07);border-radius:99px;padding:9px 14px;color:#ff8dcc;font-size:10px;font-weight:900;letter-spacing:1.4px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 13px var(--green)}
+h1{font:700 clamp(52px,9vw,92px)/.92 "Space Grotesk";letter-spacing:-5px;max-width:850px;margin:25px auto 0}.gradient{background:linear-gradient(100deg,#fff 10%,#ff6fbd 48%,#9b82ff 90%);-webkit-background-clip:text;color:transparent}.hero p{max-width:650px;color:var(--muted);font-size:16px;line-height:1.75;margin:25px auto 32px}.main-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 25px;border-radius:14px;background:linear-gradient(100deg,#ff3da8,#875bff);box-shadow:0 12px 45px rgba(135,91,255,.3);font-weight:900;font-size:14px;transition:.25s}.main-button:hover{transform:translateY(-3px);box-shadow:0 16px 55px rgba(255,61,168,.25)}.small-note{font-size:10px;color:#6f7789;margin-top:13px}
+.glow-card{width:min(760px,100%);margin-top:60px;min-height:265px;border:1px solid rgba(135,91,255,.2);border-radius:28px;background:linear-gradient(145deg,rgba(17,20,30,.9),rgba(8,10,16,.9));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.glow-card:before{content:"";position:absolute;width:260px;height:260px;background:var(--violet);filter:blur(100px);opacity:.22}.orb{position:relative;width:125px;height:125px;border-radius:36px;background:linear-gradient(135deg,var(--pink),var(--violet));display:grid;place-items:center;font:700 47px "Space Grotesk";box-shadow:0 0 75px rgba(255,61,168,.25);z-index:2}.float{position:absolute;border:1px solid var(--line);background:rgba(12,15,23,.85);backdrop-filter:blur(15px);border-radius:12px;padding:10px 13px;font-size:10px;color:#d9ddea}.f1{top:28px;left:30px}.f2{top:65px;right:27px}.f3{bottom:28px;left:80px}.f4{bottom:45px;right:65px}
+.section{padding:85px 0}.section-head{text-align:center;margin-bottom:35px}.eyebrow{font-size:10px;color:#9b84ff;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:9px}.section h2{font:700 34px "Space Grotesk";letter-spacing:-1.5px}.section-head p{color:var(--muted);font-size:13px;margin-top:8px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:25px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(150deg,#0f131d,#0a0c12)}.feature-icon{font-size:25px;margin-bottom:18px}.feature h3{font-size:15px;margin-bottom:8px}.feature p{font-size:12px;color:var(--muted);line-height:1.65}
+.games{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.game{padding:12px 17px;border:1px solid var(--line);border-radius:99px;background:#0c0f16;color:#c7ccda;font-size:12px}.game b{margin-right:7px}
+.join{padding:75px 0}.join-box{position:relative;overflow:hidden;text-align:center;padding:60px 25px;border:1px solid rgba(255,61,168,.25);border-radius:30px;background:radial-gradient(circle at 50% 100%,rgba(135,91,255,.18),transparent 55%),linear-gradient(135deg,rgba(255,61,168,.06),rgba(135,91,255,.08))}.join-box h2{font:700 clamp(32px,5vw,51px) "Space Grotesk";letter-spacing:-2px}.join-box p{color:var(--muted);max-width:560px;margin:14px auto 27px;line-height:1.7;font-size:13px}.whatsapp{background:linear-gradient(100deg,#18c978,#20df8c);box-shadow:0 12px 40px rgba(32,223,140,.18)}.rule{font-size:10px;color:#6f7789;margin-top:16px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#737b8e;font-size:10px;display:flex;justify-content:space-between}
+@media(max-width:700px){nav{display:none}.hero{padding-top:65px}.hero h1{letter-spacing:-3.5px}.hero p{font-size:14px}.glow-card{min-height:235px}.features{grid-template-columns:1fr}.float{font-size:9px}.f1{left:12px}.f2{right:12px}.f3{left:20px}.f4{right:18px}.section{padding:65px 0}.join{padding:55px 0}footer{gap:10px;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="logo" href="#inicio"><span class="logo-mark">B</span>BRATZ</a>
+<nav><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#jogos">Jogos</a><a href="#regras">Regras</a></nav>
+<a class="nav-button" href="https://chat.whatsapp.com/Cl55xbwjTiyBEzeG6zfnBm" target="_blank" rel="noopener">ENTRAR NO GRUPO ↗</a>
+</div>
+</header>
+
+<main>
+<section class="hero container" id="inicio">
+<div class="badge"><span class="dot"></span> COMUNIDADE GAMER BRATZ</div>
+<h1>O lugar onde a comunidade <span class="gradient">se encontra.</span></h1>
+<p>Bem-vindo à BRATZ. Uma comunidade para jogadores de jogos da Google Play Store em geral, com espaço para conversar, encontrar oportunidades de troca e venda de contas e conhecer outros gamers.</p>
+<a class="main-button whatsapp" href="https://chat.whatsapp.com/Cl55xbwjTiyBEzeG6zfnBm" target="_blank" rel="noopener">💬 ENTRAR NO GRUPO DO WHATSAPP →</a>
+<div class="small-note">Clique no botão acima e entre na comunidade em poucos segundos.</div>
+
+<div class="glow-card">
+<div class="orb">B</div>
+<div class="float f1">🎮 comunidade gamer</div><div class="float f2">↔ trocas & negociações</div><div class="float f3">✦ BRATZ COMMUNITY</div><div class="float f4">● comunidade ativa</div>
+</div>
+</section>
+
+<section class="section container" id="sobre">
+<div class="section-head"><div class="eyebrow">Por que BRATZ?</div><h2>Mais que um grupo. Uma comunidade.</h2><p>Um espaço criado para conectar jogadores.</p></div>
+<div class="features">
+<div class="feature"><div class="feature-icon">🎮</div><h3>Comunidade Gamer</h3><p>Converse com outros jogadores, compartilhe experiências e faça novas conexões dentro da comunidade.</p></div>
+<div class="feature"><div class="feature-icon">↔️</div><h3>Trocas & Negociações</h3><p>Encontre pessoas interessadas em negociar contas e oportunidades relacionadas aos seus jogos.</p></div>
+<div class="feature"><div class="feature-icon">💬</div><h3>Tudo pelo WhatsApp</h3><p>Entre no grupo gratuitamente e acompanhe as conversas, oportunidades e novidades da BRATZ.</p></div>
+</div>
+</section>
+
+<section class="section container" id="jogos">
+<div class="section-head"><div class="eyebrow">Universo Gamer</div><h2>Jogos da Play Store em geral</h2><p>A BRATZ é para a comunidade de jogos mobile em geral.</p></div>
+<div class="games">
+<span class="game">🎮 <b>Todos os jogos</b></span>
+<span class="game">🔥 <b>Ação</b></span>
+<span class="game">⚔️ <b>RPG</b></span>
+<span class="game">🏎️ <b>Corrida</b></span>
+<span class="game">⚽ <b>Esportes</b></span>
+<span class="game">🔫 <b>Tiro</b></span>
+<span class="game">🧩 <b>Estratégia</b></span>
+<span class="game">👥 <b>Multiplayer</b></span>
+<span class="game">✨ <b>Outros gêneros</b></span>
+</div>
+</section>
+
+<section class="join container" id="regras">
+<div class="join-box">
+<div class="eyebrow">A comunidade está esperando</div>
+<h2>Entre para a BRATZ.</h2>
+<p>Não fique só olhando. Entre no grupo oficial do WhatsApp e faça parte da comunidade gamer.</p>
+<a class="main-button whatsapp" href="https://chat.whatsapp.com/Cl55xbwjTiyBEzeG6zfnBm" target="_blank" rel="noopener">💬 ENTRAR NO GRUPO AGORA</a>
+<div class="rule">Antes de negociar contas, confira as regras e os termos de serviço do jogo envolvido.</div>
+</div>
+</section>
+</main>
+
+<footer class="container"><span>© 2026 BRATZ · Comunidade Gamer</span><span>Troque · Negocie · Conecte-se</span></footer>
+</body>
+</html>
